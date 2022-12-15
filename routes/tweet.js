@@ -8,7 +8,7 @@ const {
   rateLimiterUsingThirdParty,
 } = require("../ratelimiter");
 
-router.get("/gettweet", rateLimiterUsingThirdParty, async (req, res) => {
+router.get("/gettweet", customRedisRateLimiter, async (req, res) => {
   try {
     const data = await Tweets.find();
     res.json(data);
