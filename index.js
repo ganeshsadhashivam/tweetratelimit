@@ -13,9 +13,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use(rateLimiter.customRedisRateLimiter);
+//app.use(rateLimiter.customRedisRateLimiter);
 
-//app.use(rateLimiter.rateLimiterUsingThirdParty);
+app.use(rateLimiter.rateLimiterUsingThirdParty);
 
 //connect to db
 const uri = process.env.ATLAS_URI;
